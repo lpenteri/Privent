@@ -7,11 +7,29 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons'
 library.add(faUsers)
 
 class EventUi extends Component {
-  state = {
-    days:0,
-    hours:0,
-    minutes:0,
-    seconds:0
+
+  constructor(props) {
+      super(props);
+      this.handleCrowdChange = this.handleCrowdChange.bind(this);
+      this.handleClick = this.handleClick.bind(this);
+      this.state = {
+        days:'',
+        hours:'',
+        minutes:'',
+        seconds:'',
+        crowd:0,
+        begginingCrowdfunding:0
+      }
+  }
+
+  handleCrowdChange(e)
+  {
+    this.setState({crowd:e.target.value})
+  }
+
+  handleClick()
+  {
+    this.setState({begginingCrowdfunding:(parseInt(this.state.begginingCrowdfunding)+parseInt(this.state.crowd))})
   }
 
 
@@ -55,6 +73,7 @@ componentWillUnmount() {
 }
 
   render () {
+    var begginingCrowdfunding = this.state.begginingCrowdfunding;
     return (
       <div className='container'>
         <div className='col-md-12'>
@@ -98,6 +117,16 @@ componentWillUnmount() {
                   <div id='secondsDescr' className='digit-label'>Seconds</div>
                 </div>
              </div>
+             <h1 className="title" ><b>CROWDFUNDING</b> </h1>
+             <div>
+              <input type="text" onChange={ this.handleCrowdChange } />
+              <input
+                type="button"
+                value="Fund"
+                onClick={this.handleClick}
+              />
+              {begginingCrowdfunding} out of 30000 PUSD
+            </div>
             </div>
           </div>
         </div>

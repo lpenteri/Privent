@@ -52,11 +52,12 @@ cleos create account eosio preventacc EOS6PUh9rs7eddJNzqgqDx1QrspSHLRxLMcRdwHZZR
 # * Replace "preventacc" with your own account name when you start your own project
 
 echo "=== deploy smart contract ==="
-# $1 smart contract name 
+# $1 smart contract name
 # $2 account holder name of the smart contract
 # $3 wallet that holds the keys for the account
 # $4 password for unlocking the wallet
-deploy_contract.sh privent preventacc priventwallet $(cat privent_wallet_password.txt)
+
+deploy_contract.sh emplacements preventacc priventwallet $(cat privent_wallet_password.txt)
 
 echo "=== create user accounts ==="
 # script for creating data into blockchain

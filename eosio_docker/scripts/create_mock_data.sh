@@ -19,12 +19,10 @@ mkdir -p ~/bin && curl -sSL -o ~/bin/jq https://github.com/stedolan/jq/releases/
 
 # loop through the array in the json file and run createpost action on smart contract to add mock data
 
-jq -c '.[]' mock_data.json | while read i; do
-  timestamp=$(jq -r '.timestamp' <<< "$i")
-  title=$(jq -r '.title' <<< "$i")
-  content=$(jq -r '.content' <<< "$i")
-  tag=$(jq -r '.tag' <<< "$i")
 
-  # push the createpost action to the smart contract
-  cleos push action preventacc createpost "[ $timestamp, "\""bobross"\"", "\""$title"\"", "\""$content"\"", "\""$tag"\""]" -p bobross@active
-done
+cleos push action preventacc emplacevenue '[ "bobross","Venue1" ,"type1" , 300 , "Ydras 4 Thessaloniki-Greece" , "This is the description of a venue ....", "image1" ]' -p bobross@active
+cleos push action preventacc emplacevenue '[ "janesmith","Venue2" ,"type2" , 200 , "Platonos 4 Thessaloniki-Greece" , "This is the description of a venue ....", "image2"]' -p bobross@active
+cleos push action preventacc emplacevenue '[ "sampeters","Venue3" ,"type3" , 17 , "Dimitriou 17 Thessaloniki-Greece" , "This is the description of a venue ....", "image3"]' -p bobross@active
+cleos push action preventacc emplacevenue '[ "willthompson","Venue4" ,"type4" , 120 , "Arxelaou 1 Thessaloniki-Greece" , "This is the description of a venue ....", "image4"]' -p bobross@active
+cleos push action preventacc emplacevenue '[ "sarabrown","Venue5" ,"type5" , 230 , "Frinis 8 Thessaloniki-Greece" , "This is the description of a venue ....", "image5"]' -p bobross@active
+cleos push action preventacc emplacevenue '[ "lisawalters","Venue6" ,"type6" , 3000 , "Theodorou 20 Thessaloniki-Greece" , "This is the description of a venue ....", "image6"]' -p bobross@active

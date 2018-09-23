@@ -4,6 +4,7 @@ import { Route } from 'react-router';
 import EOSIOClient from './utils/eosio-client'
 import IOClient from './utils/io-client'
 import EventUi from './event/eventUi'
+import NewEvent from './event/newevent'
 import SearchArtist from './event/searchArtist'
 import Head from './npmComponents/header'
 import Nav from './npmComponents/navbar'
@@ -33,6 +34,7 @@ class App extends Component {
         <Head/>
         <Route path='/eventui' component={EventUi}/>
         <Route path='/searchartist' component={SearchArtist}/>
+        <Route path='/newevent' component={NewEvent} />
       </div>
 
     )

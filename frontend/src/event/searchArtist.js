@@ -38,7 +38,7 @@ class SearchArtist extends React.PureComponent {
 
     handleVenueClicked(e)
     {
-      console.log(e);
+      this.props.history.replace('/newevent');
     }
 
     handleDateFromChange(from){

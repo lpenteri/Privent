@@ -26,5 +26,5 @@ jq -c '.[]' mock_data.json | while read i; do
   tag=$(jq -r '.tag' <<< "$i")
 
   # push the createpost action to the smart contract
-  cleos push action priventaccount createpost "[ $timestamp, "\""bobross"\"", "\""$title"\"", "\""$content"\"", "\""$tag"\""]" -p bobross@active
+  cleos push action preventacc createpost "[ $timestamp, "\""bobross"\"", "\""$title"\"", "\""$content"\"", "\""$tag"\""]" -p bobross@active
 done

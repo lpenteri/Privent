@@ -1,7 +1,7 @@
 # EOSIO Demux Example
 
 # Overview
-This Blog DApp demonstrates the eosio platform running a blockchain as a local single node test net with a simple DApp. This DApp allows users to create, edit, delete and like blog posts. This guide uses scripts, containing relevant commands, which will show you how to install, build and run the DApp, and by doing so will demonstrate:
+This Blog DApp demonstrates the eosio platform running a blockchain as a local single node test net with a simple DApp. This DApp allows users to create, edit, delete and like privent posts. This guide uses scripts, containing relevant commands, which will show you how to install, build and run the DApp, and by doing so will demonstrate:
 
 - Downloading and running eosio in docker
 - Managing your docker container
@@ -13,7 +13,7 @@ This Blog DApp demonstrates the eosio platform running a blockchain as a local s
 - Implementing a web based UI using React bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 - Connecting the UI to the blockchain using [eosjs](https://github.com/EOSIO/eosjs)
 
-The sample DApp demonstrates how to use [Demux](https://github.com/EOSIO/demux-js) to listen and read events relevant to our smart contract actions from our locally running eosio node. By doing so we can update our MongoDB database deterministically with blog post data, reduce the amount of data stored in the contract's multi index table and write complex queries through MongoDB that are unavailable with the multi index table interface. The smart contract is being utilized to check authorization rather than storing state data in the actual action implementations. For this example, several posts are created by default and can be interacted with in the UI.
+The sample DApp demonstrates how to use [Demux](https://github.com/EOSIO/demux-js) to listen and read events relevant to our smart contract actions from our locally running eosio node. By doing so we can update our MongoDB database deterministically with privent post data, reduce the amount of data stored in the contract's multi index table and write complex queries through MongoDB that are unavailable with the multi index table interface. The smart contract is being utilized to check authorization rather than storing state data in the actual action implementations. For this example, several posts are created by default and can be interacted with in the UI.
 
 **Any private keys you see in this repository are for demo purposes only. For a real DApp NEVER expose the private keys.**
 
@@ -52,8 +52,8 @@ The above command will execute the following in sequence:
 
 **To stop**, execute:
 ```sh
-docker stop eosio_blog_container
-docker stop mongo_blog_container
+docker stop eosio_privent_container
+docker stop mongo_privent_container
 ```
 
 ## Frontend & Backend
@@ -79,7 +79,7 @@ npm start
 
 # Detailed guide
 
-In this section we will describe in detail each script used to run the blog DApp environment.
+In this section we will describe in detail each script used to run the privent DApp environment.
 
 ## Initial setup
 
@@ -123,7 +123,7 @@ For the second (mongodb) terminal window, running the following
 ```sh
 ./start_mongodb_docker.sh
 ```
-This script will start the mongodb database at the url mongodb://127.0.0.1/blog_platform
+This script will start the mongodb database at the url mongodb://127.0.0.1/privent_platform
 
 **Running the DApp**
 
@@ -146,7 +146,7 @@ For the fourth (frontend) terminal window, run:
 cd frontend
 npm start
 ```
-This script will open a browser session connecting to http://localhost:3000/ showing the React app. You can try to add, remove, or edit the sample blog posts using one of the accounts in [accounts.json](https://github.com/EOSIO/eosio-project-demux-example/blob/master/eosio_docker/scripts/accounts.json) and modifying the **frontend/.env** for `REACT_APP_EOSIO_ACCOUNT` and `REACT_APP_EOSIO_PRIVATE_KEY` with the name and private key of the desired account. This React app will interact with the smart contract by broadcasting transactions, which are written to the blockchain by our locally running nodeos.
+This script will open a browser session connecting to http://localhost:3000/ showing the React app. You can try to add, remove, or edit the sample privent posts using one of the accounts in [accounts.json](https://github.com/EOSIO/eosio-project-demux-example/blob/master/eosio_docker/scripts/accounts.json) and modifying the **frontend/.env** for `REACT_APP_EOSIO_ACCOUNT` and `REACT_APP_EOSIO_PRIVATE_KEY` with the name and private key of the desired account. This React app will interact with the smart contract by broadcasting transactions, which are written to the blockchain by our locally running nodeos.
 
 ## Stopping blockchain or DApp
 
@@ -154,7 +154,7 @@ This script will open a browser session connecting to http://localhost:3000/ sho
 
 In the first (blockchain) terminal window, press `ctrl+c` on your keyboard, the log will stop printing. And then execute:
 ```sh
-docker stop eosio_blog_container
+docker stop eosio_privent_container
 ```
 
 This action will take a few seconds. The blockchain will eventually be stopped.
@@ -163,7 +163,7 @@ This action will take a few seconds. The blockchain will eventually be stopped.
 
 In the second (MongoDB) terminal window, press `ctrl+c` on your keyboard, the log will stop printing. And then execute:
 ```sh
-docker stop mongo_blog_container
+docker stop mongo_privent_container
 ```
 
 This action will take a few seconds. The database will eventually be stopped.
@@ -220,9 +220,9 @@ eosio-project-demux-example // project directory
 │   │   ├── block-index-state
 │   │   │   └── block-index-state.model.js // defines the mongoose BlockIndexState model to
 │   │   └── post
-│   │       ├── post.controller.js // defines the mongoose Post model to store blog posts
-│   │       ├── post.model.js // defines the controller for blog posts
-│   │       └── post.route.js // defines routes relates to blog posts
+│   │       ├── post.controller.js // defines the mongoose Post model to store privent posts
+│   │       ├── post.model.js // defines the controller for privent posts
+│   │       └── post.route.js // defines routes relates to privent posts
 │   ├── demux // demux implementation
 │   │   ├── effects // demux effects implementations - side effects outside of the blockchain that should be triggered when blockchain events related to our smart contract are read
 │   │   ├── updaters // demux updaters implementations - updates the mongodb database when blockchain events related to our smart contract are read
@@ -237,8 +237,8 @@ eosio-project-demux-example // project directory
 │   └── server.js // starts the express.js server to listen to http requests and uses socket io to listen for websocket connections. Also initiates demux to start watching the blockchain for events
 ├── eosio_docker
 │   ├── * contracts // this folder will be mounted into docker
-│   │   └── blog
-│   │       └── blog.cpp // the main smart contract
+│   │   └── privent
+│   │       └── privent.cpp // the main smart contract
 │   ├── * data // blockchain data, generated after first_time_setup.sh
 │   │   ├── blocks
 │   │   ├── state
@@ -247,19 +247,19 @@ eosio-project-demux-example // project directory
 │       ├── accounts.json // pre-created account names, public and private keys (for demo only)
 │       ├── continue_blockchain.sh // continue the stopped blockchain
 │       ├── create_accounts.sh // create account data
-│       ├── create_mock_data.sh // create mock blog posts
+│       ├── create_mock_data.sh // create mock privent posts
 │       ├── deploy_contract.sh // deploy contract
 │       ├── init_blockchain.sh // script for creating accounts and deploying contract inside docker container
-│       └── mock_data.json // sample blog post data
+│       └── mock_data.json // sample privent post data
 └── frontend
     ├── node_modules // generated after npm install
     ├── public
     │   └── index.html // html skeleton for create react app
     ├── src
-    │   ├── CreatePost // react component with form to create new blog posts
+    │   ├── CreatePost // react component with form to create new privent posts
     │   ├── Posts // react components related to a single post
     │   │   ├── EditPost // form to edit a post
-    │   │   └── Post // blog post display
+    │   │   └── Post // privent post display
     │   ├── utils // utlities for the react app
     │   └── index.js // for react-dom to render the app
     ├── package-lock.json // generated after npm install
@@ -277,10 +277,10 @@ The DApp consists of four parts. The eosio blockchain, MongoDB database, backend
         - 1 smart contract
         - auto smart contract deployment
         - auto create 6 user accounts
-        - auto create 8 sample blog posts
+        - auto create 8 sample privent posts
 - mongodb_docker
     - mongodb database
-        - mongodb://127.0.0.1/blog_platform
+        - mongodb://127.0.0.1/privent_platform
 - frontend
     - node.js development environment
         - create-react-app: http://localhost:3000/
@@ -297,7 +297,7 @@ Docker is used to wrap the eosio software and run a container (instance) from th
 
 Go into container bash:
 ```sh
-docker exec -it eosio_blog_container bash
+docker exec -it eosio_privent_container bash
 ```
 We have already set the container working directory to `/opt/eosio/bin/`, you could run cleos command in this directory directly. For documentation of cleos: https://developers.eos.io/eosio-nodeos/docs/cleos-overview
 
@@ -310,18 +310,18 @@ exit
 
 ## Smart contract (Blockchain):
 
-The smart contract can be found at `eosio_docker/contracts/blog/blog.cpp`, you can edit this smart contract. You will then need to compile and deploy the contract to the blockchain.
+The smart contract can be found at `eosio_docker/contracts/privent/privent.cpp`, you can edit this smart contract. You will then need to compile and deploy the contract to the blockchain.
 
 To save time, we prepared some scripts for you. Execute the scripts in the container bash (see above.)
 
 The following script will help you to unlock the wallet, compile the modified contract and deploy to blockchain. 1st parameter is the contract name; 2nd parameter is the account name of the contract owner, 3rd and 4th parameter references wallet related information that was created during the `Initial setup`:
 ```sh
-./scripts/deploy_contract.sh blog blogaccount blogwallet $(cat blog_wallet_password.txt)
+./scripts/deploy_contract.sh privent priventaccount priventwallet $(cat privent_wallet_password.txt)
 ```
 
 After running this script the modified smart contract will be deployed on the blockchain.
 
-Remember to redeploy the blog contract each time you modify it using the steps above!
+Remember to redeploy the privent contract each time you modify it using the steps above!
 
 ## Backend:
 
@@ -340,7 +340,7 @@ If you are more familiar with docker, you could use the docker commands below to
 Run container from eosio/eos-dev image by mounting contracts / scripts to the container with running the init_blockchain.sh script as the process.
 The init_blockchain.sh script run the local node of the blockchain and initializes wallets / contract / data.
 ```sh
-docker run --rm --name eosio_blog_container \
+docker run --rm --name eosio_privent_container \
 -p 8888:8888 -p 9876:9876 \
 --mount type=bind,src="$(pwd)"/contracts,dst=/opt/eosio/bin/contracts \
 --mount type=bind,src="$(pwd)"/scripts,dst=/opt/eosio/bin/scripts \
@@ -350,17 +350,17 @@ docker run --rm --name eosio_blog_container \
 
 Output and follow docker console logs:
 ```sh
-docker logs eosio_blog_container --follow
+docker logs eosio_privent_container --follow
 ```
 
 Stop the container (see below troubleshoot section to see how to pause and continue the blockchain):
 ```sh
-docker stop eosio_blog_container
+docker stop eosio_privent_container
 ```
 
 Remove the container (will remove all wallets / contracts / data), useful if you want to re-init the whole DApp.
 ```sh
-docker rm -f eosio_blog_container
+docker rm -f eosio_privent_container
 ```
 
 # Troubleshooting

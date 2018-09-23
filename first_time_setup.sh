@@ -26,7 +26,7 @@ docker pull eosio/eos-dev:v1.2.5
 # force remove the previous eosio container if it exists
 # create a clean data folder in the eosio_docker to preserve block data
 echo "=== setup/reset data for eosio_docker ==="
-docker stop eosio_blog_container || true && docker rm --force eosio_blog_container || true
+docker stop eosio_privent_container || true && docker rm --force eosio_privent_container || true
 rm -rf "./eosio_docker/data"
 mkdir -p "./eosio_docker/data"
 
@@ -35,8 +35,8 @@ echo "=== pull mongo image 4.0 from docker hub ==="
 docker pull mongo:4.0
 
 # force remove the previous mongodb container if it exists
-echo "=== setup/reset data for mongo_blog_container ==="
-docker stop mongo_blog_container || true && docker rm --force mongo_blog_container || true
+echo "=== setup/reset data for mongo_privent_container ==="
+docker stop mongo_privent_container || true && docker rm --force mongo_privent_container || true
 
 # set up node_modules for frontend
 echo "=== npm install packpage for frontend react app ==="

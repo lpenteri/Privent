@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 
 const { Schema } = mongoose
 
-let Venue = null
+let Artist = null
 
 try {
-  const VenueSchema = new Schema({
+  const ArtistSchema = new Schema({
     _id: Schema.Types.ObjectId,
     account:{
       type: String,
@@ -18,12 +18,11 @@ try {
     bio: String,
     imageName: String,
     flat_fee:Number,
-    hourly_fee:Number,
-    per_participant_fee:Number
+    hourly_fee:Number
   })
-  Venue = mongoose.model('Venue', VenueSchema)
+  Artist = mongoose.model('Artist', ArtistSchema)
 } catch (e) {
-  Venue = mongoose.model('Venue')
+  Artist = mongoose.model('Artist')
 }
 
-module.exports = Venue
+module.exports = Artist

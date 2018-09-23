@@ -5,10 +5,10 @@ import '../css/searchResults.css';
 class ResultEntity extends React.PureComponent {
   constructor(props) {
       super(props);
-      this.venueClicked = this.venueClicked.bind(this);
+      this.artistClicked = this.artistClicked.bind(this);
   }
 
-  venueClicked(e)
+  artistClicked(e)
   {
     this.props.click(this.props.item);
   }
@@ -20,7 +20,7 @@ class ResultEntity extends React.PureComponent {
 
     return (
       <div>
-          <div className="resultEntityDivPlaceholder" id={item._id} onClick={this.venueClicked}>
+          <div className="resultEntityDivPlaceholder" id={item._id} onClick={this.artistClicked}>
             <div className ="resultEntityImgPlaceholder">
               <img className="resultImg" width="200" height="200" src={item.imageName}/>
             </div>
@@ -32,12 +32,8 @@ class ResultEntity extends React.PureComponent {
                       {item.name}
                     </span>
                   </h3>
-                    <span className="resultEntityCategory resultEntityTitle">
-                      {item.type}
-                    </span>
                   <div className="resultEntityAddress">
                     <a className="resultEntityLocation" href="">{item.location}</a>
-                    <span className="resultEntityCapacity"> Capacity: {item.capacity} people</span>
                   </div>
                   <div className="resultEntitybio">
                       <span>{item.bio}</span>
@@ -51,7 +47,6 @@ class ResultEntity extends React.PureComponent {
                         {item.flat_fee} PUSD
                       </span>
                     </div>
-
                     <div className="resultEntityPricinPerHour">
                       <span className="PricingTitle">
                         Per hour
@@ -60,17 +55,6 @@ class ResultEntity extends React.PureComponent {
                         {item.hourly_fee} PUSD
                       </span>
                     </div>
-
-                    <div className="resultEntityPricinPerParticipant">
-                      <span className="PricingTitle">
-                        Per participant
-                      </span>
-                      <span className="PricingValue">
-                        {item.per_participant_fee} PUSD
-                      </span>
-                    </div>
-
-
                  </div>
                 </div>
               </div>

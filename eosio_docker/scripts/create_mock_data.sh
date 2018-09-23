@@ -20,9 +20,9 @@ mkdir -p ~/bin && curl -sSL -o ~/bin/jq https://github.com/stedolan/jq/releases/
 # loop through the array in the json file and run createpost action on smart contract to add mock data
 
 
-cleos push action preventacc emplacevenue '[ "bobross","Venue1" ,"type1" , 300 , "Ydras 4 Thessaloniki-Greece" , "This is the description of a venue ....", "/image1.jpg",3000,400,10 ]' -p bobross@active
-cleos push action preventacc emplacevenue '[ "janesmith","Venue2" ,"type2" , 200 , "Platonos 4 Thessaloniki-Greece" , "This is the description of a venue ....", "/image2.jpg",2500,300,15]' -p bobross@active
-cleos push action preventacc emplacevenue '[ "sampeters","Venue3" ,"type3" , 17 , "Dimitriou 17 Thessaloniki-Greece" , "This is the description of a venue ....", "/image3.jpg",400,50,25]' -p bobross@active
-cleos push action preventacc emplacevenue '[ "willthompson","Venue4" ,"type4" , 120 , "Arxelaou 1 Thessaloniki-Greece" , "This is the description of a venue ....", "/image4.jpg",1800,300,20]' -p bobross@active
-cleos push action preventacc emplacevenue '[ "sarabrown","Venue5" ,"type5" , 230 , "Frinis 8 Thessaloniki-Greece" , "This is the description of a venue ....", "/image6.jpg",3500 , 600 , 30]' -p bobross@active
-cleos push action preventacc emplacevenue '[ "lisawalters","Venue6" ,"type6" , 3000 , "Theodorou 20 Thessaloniki-Greece" , "This is the description of a venue ....", "/image5.jpg" , 35000 , 5000 , 15]' -p bobross@active
+cleos push action preventacc emplaceart '[ "bobross","Nick Papadopoulos" ,"type1" , 300 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image1.jpg",3000,400 ]' -p bobross@active
+cleos push action preventacc emplaceart '[ "janesmith","Rita Morty" ,"type2" , 200 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image2.jpg",2500,300]' -p bobross@active
+cleos push action preventacc emplaceart '[ "sampeters","Bill Evans" ,"type3" , 17 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image3.jpg",400,50]' -p bobross@active
+cleos push action preventacc emplaceart '[ "willthompson","Mary Trazy" ,"type4" , 120 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image4.jpg",1800,300]' -p bobross@active
+cleos push action preventacc emplaceart '[ "sarabrown","Helen Antonopouloy" ,"type5" , 230 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image6.jpg",3500 , 600]' -p bobross@active
+cleos push action preventacc emplaceart '[ "lisawalters","Dany Rose" ,"type6" , 3000 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image5.jpg" , 35000 , 5000]' -p bobross@active

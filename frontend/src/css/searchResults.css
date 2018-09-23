@@ -13,58 +13,8 @@
 	width:100%;
 }
 
-.loadingClass img{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.loadingClass{
-	display: block;
-    width: [width of img];
-    text-align:center;
-}
-
-.loadingClass h5{
-    color:#313445;
-    text-align:center;
- }
-
- .noResultsFound{
- 	text-align:center;
- }
-
- .noResultsFound h1{
- 	display :inline-block;
- 	margin:0 5px 2px;
- 	font-size:18px;
- }
-
- .linkToHostNoResults{
-	display:inline-block;
-	margin:0 0px 2px;
-	font-size:18px;
-	text-decoration-line:none;
-	text-decoration-style:solid;
-	text-decoration-color:currentcolor;
-	cursor:pointer;
-	color:inherit;
-	touch-action:manipulation;
-	font-weight:600;
- }
-
- a.linkToHostNoResults:link{text-decoration:none;}
- a.linkToHostNoResults:hover{color:#f18e65;}
-
- .noResultsFound img{
- 	display:block;
- 	width:40%;
- 	padding-top:5%;
- 	margin-left:auto;
- 	margin-right:auto;
- }
-
 .resultEntityDivPlaceholder{
-	width:100%;
+	width:50%;
 	padding:16px;
 	margin:16px 0;
 	border:1px solid #c6c6c6;

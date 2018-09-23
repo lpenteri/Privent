@@ -1,6 +1,6 @@
 const { AbstractActionHandler } = require('demux')
 const mongoose = require('mongoose')
-const Venue = require('../api/venue/venue.model')
+const Artist = require('../api/artist/artist.model')
 const BlockIndexState = require('../api/block-index-state/block-index-state.model')
 const io = require('../utils/io')
 
@@ -34,7 +34,7 @@ class ActionHandler extends AbstractActionHandler {
 
   async handleWithState (handle) {
     const context = { socket: io.getSocket() }
-    const state = { venue: Venue, blockIndexState: BlockIndexState }
+    const state = { artist: Artist, blockIndexState: BlockIndexState }
     try {
       await handle(state, context)
     } catch (err) {

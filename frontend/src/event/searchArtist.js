@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchLoc from '../npmComponents/searchLocation';
 import PickDate from '../npmComponents/pickDate';
-import '../css/searchVenue.css'
+import '../css/searchArtist.css'
 import axios from 'axios';
 import ResultEntity from '../npmComponents/ResultEntity';
 const queryString = require('query-string');
@@ -9,7 +9,7 @@ const queryString = require('query-string');
 
 
 
-class SearchVenue extends React.PureComponent {
+class SearchArtist extends React.PureComponent {
 
     constructor(props)
     {
@@ -73,7 +73,7 @@ class SearchVenue extends React.PureComponent {
 
       await axios({
          method:'get',
-         url:'http://localhost:4000/venues',
+         url:'http://localhost:4000/searchArtists',
          responseType:'json'
        })
        .then((response) => {
@@ -86,7 +86,6 @@ class SearchVenue extends React.PureComponent {
        .catch((err) => {
          console.log(err);
        });
-
     }
 
   renderItems() {
@@ -105,7 +104,7 @@ class SearchVenue extends React.PureComponent {
              <div className="clearfix">
                 <PickDate from={this.state.dateFrom} to={this.state.dateTo} fromChange ={this.handleDateFromChange} toChange={this.handleDateToChange} timeFromChange={this.handleHourFromChange} timeToChange={this.handleHourToChange}/>
              </div>
-              <input type="submit" className="submitButton" value="Search Venues"/>
+              <input type="submit" className="submitButton" value="Search Artists"/>
           </form>
         </div>
       </div>
@@ -114,7 +113,7 @@ class SearchVenue extends React.PureComponent {
 
     if(this.state.search===true){
       return (
-        <div>
+        <div className = 'centerplz'>
           {searchBar}
           <div>{ this.renderItems() }</div>
         </div>
@@ -122,7 +121,7 @@ class SearchVenue extends React.PureComponent {
     }
     if(this.state.search===false){
       return (
-        <div>
+        <div className = 'centerplz'>
           {searchBar}
         </div>
       );
@@ -132,4 +131,4 @@ class SearchVenue extends React.PureComponent {
 
   }
 }
-export default SearchVenue;
+export default SearchArtist;

@@ -10,7 +10,7 @@ class emplacements : public contract
     {
     }
 
-    void emplacevenue(std::string account, std::string name, std::string type, uint64_t capacity, std::string location , std::string bio , std::string imageName , uint64_t flat_fee , uint64_t hourly_fee , uint64_t per_participant_fee)
+    void emplaceart(std::string account, std::string name, std::string type, uint64_t capacity, std::string location , std::string bio , std::string imageName , uint64_t flat_fee , uint64_t hourly_fee)
     {
 
     }
@@ -18,4 +18,4 @@ class emplacements : public contract
   private:
 };
 
-EOSIO_ABI(emplacements, (emplacevenue))
+EOSIO_ABI(emplacements, (emplaceart))

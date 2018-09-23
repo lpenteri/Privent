@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
-async function emplaceVenue (state, payload, blockInfo, context) {
-  const Venue = state.venue
+async function emplaceArt (state, payload, blockInfo, context) {
+  const Artist = state.artist
   try {
-    venue = new Venue(
+    artist = new Artist(
       {
         _id: new mongoose.Types.ObjectId(),
         account: payload.data.account,
@@ -14,14 +14,13 @@ async function emplaceVenue (state, payload, blockInfo, context) {
         capacity: payload.data.capacity,
         imageName: payload.data.imageName,
         flat_fee:payload.data.flat_fee,
-        hourly_fee:payload.data.hourly_fee,
-        per_participant_fee:payload.data.per_participant_fee
+        hourly_fee:payload.data.hourly_fee
       }
     )
-    await venue.save()
+    await artist.save()
   } catch (err) {
     console.error(err)
   }
 }
 
-module.exports = emplaceVenue
+module.exports = emplaceArt

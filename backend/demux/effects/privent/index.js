@@ -1,11 +1,11 @@
-const emplaceVenue = require('./emplaceVenue')
+const emplaceArt = require('./emplaceArt')
 
 
 const account = process.env.EOSIO_CONTRACT_ACCOUNT
 
 module.exports = [
   {
-    actionType: `${account}::emplacevenue`, // account::action name
-    effect: emplaceVenue
+    actionType: `${account}::emplaceart`, // account::action name
+    effect: emplaceArt
   }
 ]

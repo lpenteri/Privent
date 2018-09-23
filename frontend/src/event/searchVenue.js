@@ -22,7 +22,8 @@ class SearchVenue extends React.PureComponent {
                     dateFrom:undefined,
                     dateTo:undefined,
                     hourFrom:'00:00',
-                    hourTo:'23:59'
+                    hourTo:'23:59',
+                    search:false
              };
 
     }
@@ -55,31 +56,47 @@ class SearchVenue extends React.PureComponent {
       parsed.hourFrom = this.state.hourFrom;
       parsed.hourTo = this.state.hourTo;
 
-      this.props.history.push({
-        pathname: '/host/searchresults',
-        search: queryString.stringify(parsed)
-      });
+      this.setState({search : true})
     }
 
-  render() {
-    return (
-        <div className>
-           <div className="row pad">
-            <div className="col-lg-6">
-              <form onSubmit={this.submitHandler.bind(this)}>
-                    <div className="formstyle">
-                      <SearchLoc handleSearchLocChange={this.handleSearchLocChange}/>
-                    </div>
-                 <div className="clearfix">
-                    <PickDate from={this.state.dateFrom} to={this.state.dateTo} fromChange ={this.handleDateFromChange} toChange={this.handleDateToChange} timeFromChange={this.handleHourFromChange} timeToChange={this.handleHourToChange}/>
-                 </div>
-                  <input type="submit" className="submitButton" value="Search Venues"/>
-              </form>
-            </div>
-          </div>
-        </div>
 
-    );
+
+  render() {
+    let searchBar = <div>
+       <div className="row pad">
+        <div className="col-lg-6">
+          <form onSubmit={this.submitHandler.bind(this)}>
+                <div className="formstyle">
+                  <SearchLoc handleSearchLocChange={this.handleSearchLocChange}/>
+                </div>
+             <div className="clearfix">
+                <PickDate from={this.state.dateFrom} to={this.state.dateTo} fromChange ={this.handleDateFromChange} toChange={this.handleDateToChange} timeFromChange={this.handleHourFromChange} timeToChange={this.handleHourToChange}/>
+             </div>
+              <input type="submit" className="submitButton" value="Search Venues"/>
+          </form>
+        </div>
+      </div>
+    </div>;
+
+
+    if(this.state.search===true){
+      return (
+        <div>
+          {searchBar}
+          
+        </div>
+      );
+    }
+    if(this.state.search===false){
+      return (
+        <div>
+          {searchBar}
+        </div>
+      );
+    }
+
+
+
   }
 }
 export default SearchVenue;

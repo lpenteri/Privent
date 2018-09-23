@@ -26,3 +26,10 @@ if [ ! -z $3 ]; then ./cleos wallet unlock -n $3 --password $4 || true; fi
 
 # set (deploy) compiled contract to blockchain
 cleos set contract $2 "$COMPILEDCONTRACTSPATH/$1/" --permission $2
+
+#cleos wallet import -n $3 --private-key 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3 || true
+
+# now deploy PUSD token (stable coin)
+#cleos set contract eosio.token /opt/eosio/contracts/eosio.token --permission eosio.token
+#cleos push action eosio.token create '[ "priventacc", "1000000000.0000 PUSD"]' -p eosio.token@active
+

@@ -302,7 +302,7 @@ To save time, we prepared some scripts for you. Execute the scripts in the conta
 
 The following script will help you to unlock the wallet, compile the modified contract and deploy to blockchain. 1st parameter is the contract name; 2nd parameter is the account name of the contract owner, 3rd and 4th parameter references wallet related information that was created during the `Initial setup`:
 ```sh
-./scripts/deploy_contract.sh privent preventacc priventwallet $(cat privent_wallet_password.txt)
+./scripts/deploy_contract.sh privent priventacc priventwallet $(cat privent_wallet_password.txt)
 ```
 
 After running this script the modified smart contract will be deployed on the blockchain.

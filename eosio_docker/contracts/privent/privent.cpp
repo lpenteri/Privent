@@ -17,21 +17,30 @@ public:
     */
     typedef eosio::multi_index< N(events), event> events;
 	/*
+   	struct account {
+        asset    balance;
+        uint64_t primary_key()const { return balance.symbol.name(); }
+     };
+*/
+	typedef eosio::multi_index<N(accounts), account> accounts; 
+    
+    /*
 	void get_balance(account_name owner) {
     	eosio::token t(N(eosio.token));
     	const auto sym_name = eosio::symbol_type(S(4,PUSD)).name();
     	const auto my_balance = t.get_balance(N(owner), sym_name );
     	eosio::print("My balance is ", my_balance); 
-	} */
+	} 
+*/
 
     ///@abi action
     void test(account_name owner) {
     	eosio::token t(N(eosio.token));
-    	const auto sym_name = eosio::symbol_type(S(4, "PUSD")).name();
-    /*	const auto my_balance = t.get_balance(N(owner), sym_name );
+/*    	const auto sym_name = eosio::symbol_type(S(4, "PUSD")).name();
+        const auto my_balance = t.get_balance(N(owner), sym_name );
     	eosio::print("My balance is ", my_balance); 
-    */
-	}
+
+*/	}
 
     //Check if the event has started. Returns True if investment is still possible
     bool active(event evt){

@@ -20,12 +20,12 @@ mkdir -p ~/bin && curl -sSL -o ~/bin/jq https://github.com/stedolan/jq/releases/
 # loop through the array in the json file and run createpost action on smart contract to add mock data
 
 
-cleos push action preventacc emplaceart '[ "bobross","Nick Papadopoulos" ,"type1" , 300 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image1.jpg",3000,400 ]' -p bobross@active
-cleos push action preventacc emplaceart '[ "janesmith","Rita Morty" ,"type2" , 200 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image2.jpg",2500,300]' -p bobross@active
-cleos push action preventacc emplaceart '[ "sampeters","Bill Evans" ,"type3" , 17 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image3.jpg",400,50]' -p bobross@active
-cleos push action preventacc emplaceart '[ "willthompson","Mary Trazy" ,"type4" , 120 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image4.jpg",1800,300]' -p bobross@active
-cleos push action preventacc emplaceart '[ "sarabrown","Helen Antonopouloy" ,"type5" , 230 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image6.jpg",3500 , 600]' -p bobross@active
-cleos push action preventacc emplaceart '[ "lisawalters","Dany Rose" ,"type6" , 3000 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image5.jpg" , 35000 , 5000]' -p bobross@active
+cleos push action priventacc emplaceart '[ "bobross","Nick Papadopoulos" ,"type1" , 300 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image1.jpg",3000,400 ]' -p bobross@active
+cleos push action priventacc emplaceart '[ "janesmith","Rita Morty" ,"type2" , 200 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image2.jpg",2500,300]' -p bobross@active
+cleos push action priventacc emplaceart '[ "sampeters","Bill Evans" ,"type3" , 17 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image3.jpg",400,50]' -p bobross@active
+cleos push action priventacc emplaceart '[ "willthompson","Mary Trazy" ,"type4" , 120 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image4.jpg",1800,300]' -p bobross@active
+cleos push action priventacc emplaceart '[ "sarabrown","Helen Antonopouloy" ,"type5" , 230 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image6.jpg",3500 , 600]' -p bobross@active
+cleos push action priventacc emplaceart '[ "lisawalters","Dany Rose" ,"type6" , 3000 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image5.jpg" , 35000 , 5000]' -p bobross@active
 
 jq -c '.[]' mock_data.json | while read i; do
   timestamp=$(jq -r '.timestamp' <<< "$i")
@@ -33,6 +33,6 @@ jq -c '.[]' mock_data.json | while read i; do
   content=$(jq -r '.content' <<< "$i")
   tag=$(jq -r '.tag' <<< "$i")
 
-# cleos push action priventacc test "["\""priventacc"\""]" -p priventacc@active 
+#cleos push action priventacc test "["\""bobross"\""]" -p bobross@active 
 
 done

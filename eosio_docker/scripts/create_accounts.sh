@@ -27,3 +27,5 @@ jq -c '.[]' accounts.json | while read i; do
   # to simplify, we use the same key for owner and active key of each account
   cleos create account eosio $name $pub $pub
 done
+#cleos push action eosio.token issue '[ "bobross", "100.0000 PUSD", "memo" ]' -p priventacc@active
+cleos create account eosio eosio.token EOS8BCgapgYA2L4LJfCzekzeSr3rzgSTUXRXwNi8bNRoz31D14en9 EOS8BCgapgYA2L4LJfCzekzeSr3rzgSTUXRXwNi8bNRoz31D14en9 

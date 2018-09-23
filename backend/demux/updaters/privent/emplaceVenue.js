@@ -12,7 +12,10 @@ async function emplaceVenue (state, payload, blockInfo, context) {
         location: payload.data.location,
         bio: payload.data.bio,
         capacity: payload.data.capacity,
-        imageName: payload.data.imageName
+        imageName: payload.data.imageName,
+        flat_fee:payload.data.flat_fee,
+        hourly_fee:payload.data.hourly_fee,
+        per_participant_fee:payload.data.per_participant_fee
       }
     )
     await venue.save()

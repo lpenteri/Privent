@@ -16,7 +16,10 @@ try {
     capacity: Number,
     location: String,
     bio: String,
-    imageName: String
+    imageName: String,
+    flat_fee:Number,
+    hourly_fee:Number,
+    per_participant_fee:Number
   })
   Venue = mongoose.model('Venue', VenueSchema)
 } catch (e) {

@@ -1,0 +1,324 @@
+.img-with-text {
+	display: block;
+    width: [width of img];
+    text-align:center;
+}
+
+.img-with-text img {
+  margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+.main-content{
+	width:100%;
+}
+
+.loadingClass img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loadingClass{
+	display: block;
+    width: [width of img];
+    text-align:center;
+}
+
+.loadingClass h5{
+    color:#313445;
+    text-align:center;
+ }
+
+ .noResultsFound{
+ 	text-align:center;
+ }
+
+ .noResultsFound h1{
+ 	display :inline-block;
+ 	margin:0 5px 2px;
+ 	font-size:18px;
+ }
+
+ .linkToHostNoResults{
+	display:inline-block;
+	margin:0 0px 2px;
+	font-size:18px;
+	text-decoration-line:none;
+	text-decoration-style:solid;
+	text-decoration-color:currentcolor;
+	cursor:pointer;
+	color:inherit;
+	touch-action:manipulation;
+	font-weight:600;
+ }
+
+ a.linkToHostNoResults:link{text-decoration:none;}
+ a.linkToHostNoResults:hover{color:#f18e65;}
+
+ .noResultsFound img{
+ 	display:block;
+ 	width:40%;
+ 	padding-top:5%;
+ 	margin-left:auto;
+ 	margin-right:auto;
+ }
+
+.resultEntityDivPlaceholder{
+	width:100%;
+	padding:16px;
+	margin:16px 0;
+	border:1px solid #c6c6c6;
+	border-radius: 3px;
+	box-sizing:border-box;
+	cursor:default;
+	clear:both;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	box-shadow: 0 0 10px #dedede;
+}
+.resultEntityDivPlaceholder:hover{
+	background-color: #dedede;
+}
+.resultEntityImgPlaceholder{
+	min-height: auto;
+	position:relative;
+	top:0;
+	right:0;
+	bottom: 0;
+	left:0;
+}
+
+.resultImg{
+	display:block;
+	border-radius: 3px;
+	border:none !important;
+	cursor:default;
+}
+
+.resultEntityPlaceholderExpImg{
+	min-width: 0;
+	margin:0;
+	box-sizing:border-box;
+	color:#383838;
+	font-size: small;
+	line-height: 1.2;
+	order:2;
+	flex-grow:1;
+	flex-basis:200px;
+	padding:0 0 0 16px;
+
+}
+
+.resultEntityContentPrice{
+	min-height: 50px;
+	display:flex;
+	flex-direction:row-reverse;
+	justify-content:space-between;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 400;
+	margin:0;
+	padding:0;
+}
+
+.resultEntityTitleBio{
+	order:2;
+	flex-grow:1;
+	min-height: auto;
+	position:relative;
+	top:0;
+	right:0;
+	bottom: 0;
+	left:0;
+}
+
+.resultEntityTitle{
+	font-size: 20px;
+	line-height: 28px;
+	font-weight: 500;
+	display: inline-block;
+	margin:0 !important;
+	padding-right: 2px;
+}
+
+.resultEntityTitleSpan{
+	padding:3px 0;
+	font-size:20px;
+	font-weight: bold;
+	line-height: 28px;
+}
+
+.resultEntityAddress{
+	margin: 0 0 8px 0 !important;
+	font-style: italic;
+}
+
+.resultEntityLocation{
+	font-weight: 600;
+	text-decoration: none;
+	color:#313445;
+}
+
+ a.resultEntityLocation:link{text-decoration:none;}
+ a.resultEntityLocation:hover{color:#f18e65;}
+
+ .resultEntityDistance{
+ 	padding :3px 0;
+ 	margin:5px;
+ }
+.resultEntityCategory{
+	position:relative;
+ 	float:right;
+ 	font-weight: bold;
+}
+
+ .resultEntityCapacity{
+ 	position:relative;
+ 	float:right;
+}
+
+
+.resultEntityPricingPerHour{
+	display:block;
+	position: relative;
+	float:right;
+	clear:right;
+}
+.resultEntityPricingPerPerson{
+	display:block;
+	position: relative;
+	float:right;
+	clear:right;
+}
+.resultEntitybio{
+	max-width: 70%;
+	font-size:13px;
+}
+
+.resultEntityPricinFlatFee{
+	display: flex;
+	flex-direction:column;
+	margin:0 5px 0 0;
+	max-width: 23%;
+	height: auto;
+	border:1px solid #f18e65;
+	border-radius:3px;
+	vertical-align: bottom;
+}
+
+.PricingTitle{
+	display:block;
+	margin:.3em;
+	padding:0 .2em .3em .2em;
+	border-bottom:1px solid #e9f0fa;
+	color:#313445;
+	text-align:center;
+	font-weight: normal !important;
+}
+
+.PricingValue{
+	display:block;
+	padding:.6em;
+	background-color: #f18e65;
+	color:#ffff;
+	text-align:center;
+	font-weight: normal !important;
+}
+
+.resultEntityPricinPerParticipant
+{
+	display: flex;
+	flex-direction:column;
+	margin:0 5px 0 0;
+	max-width: 23%;
+	height: auto;
+	border:1px solid #f18e65;
+	border-radius:3px;
+	vertical-align: bottom;
+	float:left;
+}
+
+.resultEntityPricinPerHour
+{
+	display: flex;
+	flex-direction:column;
+	margin:0 5px 0 0;
+	max-width: 23%;
+	height: auto;
+	border:1px solid #f18e65;
+	border-radius:3px;
+	vertical-align: bottom;
+
+}
+
+.resultEntityPricing{
+	display: flex;
+	text-align:center;
+	padding:10px;
+}
+
+.searchResultsSearchInput{
+	width:50%;
+	float: left;
+}
+
+.dropDownMenus{
+	overflow: visible;
+
+}
+
+.searchResultsOptions{
+	width:30%;
+	float:left;
+	font-size: 1rem;
+	line-height: 2.25;
+	color:#464a4c;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 0.25rem;
+}
+
+.searchResultsPeople{
+	width:20%;
+	float:left;
+	font-size: 1rem;
+	line-height: 2.25;
+	color:#464a4c;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 0.25rem;
+}
+
+#id1 .Dropdown-control{
+	border: none;
+}
+
+.searchResultDatePicker{
+	clear:left;
+	float:left;
+	width: 100%;
+	margin-bottom: 5%;
+}
+
+.fieldBlock-upSide{
+	display: inline-block;
+}
+
+.fieldBlock-downSide{
+	display: inline-block;
+
+}
+
+.pickTimeClass-from{
+	display:inline-block;
+	margin-left:15px;
+}
+
+
+.pickTimeClass-to{
+	display:inline-block;
+	margin-left:15px;
+}
+.searchComponents{
+	clear:both;
+	overflow: visible;
+}

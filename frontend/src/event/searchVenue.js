@@ -2,6 +2,8 @@ import React from 'react';
 import SearchLoc from '../npmComponents/searchLocation';
 import PickDate from '../npmComponents/pickDate';
 import '../css/searchVenue.css'
+import axios from 'axios';
+import ResultEntity from '../npmComponents/ResultEntity';
 const queryString = require('query-string');
 
 
@@ -18,18 +20,26 @@ class SearchVenue extends React.PureComponent {
       this.handleDateToChange = this.handleDateToChange.bind(this);
       this.handleHourFromChange = this.handleHourFromChange.bind(this);
       this.handleHourToChange = this.handleHourToChange.bind(this);
+      this.changeResults = this.changeResults.bind(this);
+      this.handleVenueClicked = this.handleVenueClicked.bind(this);
       this.state = {searchLoc: '',
                     dateFrom:undefined,
                     dateTo:undefined,
                     hourFrom:'00:00',
                     hourTo:'23:59',
-                    search:false
+                    search:false,
+                    result:''
              };
 
     }
     handleSearchLocChange(_search){
           this.setState({searchLoc : _search});
-    }clearfix
+    }
+
+    handleVenueClicked(e)
+    {
+      console.log(e);
+    }
 
     handleDateFromChange(from){
           this.setState({dateFrom : from});
@@ -45,21 +55,44 @@ class SearchVenue extends React.PureComponent {
     handleHourToChange(to){
           this.setState({hourTo : to});
     }
+    changeResults(result)
+    {
+      this.setState({result: result , search: true});
+    }
 
-     submitHandler(e){
+    async submitHandler(e){
       e.preventDefault();
 
-      var parsed= {};
+      var parsed = {};
       parsed.searchLoc = this.state.searchLoc;
       parsed.dateFrom = this.state.dateFrom;
       parsed.dateTo = this.state.dateTo;
       parsed.hourFrom = this.state.hourFrom;
       parsed.hourTo = this.state.hourTo;
 
-      this.setState({search : true})
+
+      await axios({
+         method:'get',
+         url:'http://localhost:4000/venues',
+         responseType:'json'
+       })
+       .then((response) => {
+         if(response.data.length === 0){
+
+         }else{
+           this.changeResults(response.data)
+         }
+       })
+       .catch((err) => {
+         console.log(err);
+       });
+
     }
 
-
+  renderItems() {
+    const { result } = this.state
+    return result.map(item => <ResultEntity key={item._id} item={item} click = {this.handleVenueClicked}/>)
+  }
 
   render() {
     let searchBar = <div>
@@ -83,7 +116,7 @@ class SearchVenue extends React.PureComponent {
       return (
         <div>
           {searchBar}
-          
+          <div>{ this.renderItems() }</div>
         </div>
       );
     }

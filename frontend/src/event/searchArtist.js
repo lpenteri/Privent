@@ -113,7 +113,7 @@ class SearchArtist extends React.PureComponent {
 
     if(this.state.search===true){
       return (
-        <div className = 'centerplz'>
+        <div className = 'search-wrapper'>
           {searchBar}
           <div>{ this.renderItems() }</div>
         </div>
@@ -121,7 +121,7 @@ class SearchArtist extends React.PureComponent {
     }
     if(this.state.search===false){
       return (
-        <div className = 'centerplz'>
+        <div className = 'search-wrapper'>
           {searchBar}
         </div>
       );

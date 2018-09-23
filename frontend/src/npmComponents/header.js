@@ -8,6 +8,11 @@ render(){
 	return(
 	<div className="header-wrapper">
     	<header className='header'>
+        <img
+            alt=""
+            className="logo"
+            src="/logo.png"
+          />
      		<div className="right-side">
       			<div className="thubnail">
       			<div>

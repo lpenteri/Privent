@@ -17,6 +17,17 @@
   }
 }
 
+  .logo {
+    position: absolute;
+    top: 0.5rem;
+    left: 2px;
+    height: 75px;
+    
+    @media (max-width: 767px) {
+      height: 30px;
+    }
+  }
+  
 .right-side {
 	float:right;
 }

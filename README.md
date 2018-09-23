@@ -1,21 +1,7 @@
-# EOSIO Demux Example
+# Privent 
 
 # Overview
-This Blog DApp demonstrates the eosio platform running a blockchain as a local single node test net with a simple DApp. This DApp allows users to create, edit, delete and like privent posts. This guide uses scripts, containing relevant commands, which will show you how to install, build and run the DApp, and by doing so will demonstrate:
-
-- Downloading and running eosio in docker
-- Managing your docker container
-- Setting up and running a local single node testnet
-- Setting up wallets, keys, and accounts
-- Writing and deploying a smart contract
-- Implementing a Node.js server with [Demux](https://github.com/EOSIO/demux-js) to watch and read the state of the blockchain
-- Setting up and using a MongoDB database to store state data relevant to the DApp
-- Implementing a web based UI using React bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
-- Connecting the UI to the blockchain using [eosjs](https://github.com/EOSIO/eosjs)
-
-The sample DApp demonstrates how to use [Demux](https://github.com/EOSIO/demux-js) to listen and read events relevant to our smart contract actions from our locally running eosio node. By doing so we can update our MongoDB database deterministically with privent post data, reduce the amount of data stored in the contract's multi index table and write complex queries through MongoDB that are unavailable with the multi index table interface. The smart contract is being utilized to check authorization rather than storing state data in the actual action implementations. For this example, several posts are created by default and can be interacted with in the UI.
-
-**Any private keys you see in this repository are for demo purposes only. For a real DApp NEVER expose the private keys.**
+Privent enables an event sharing/peer economy, with respect to user privacy.
 
 # Prerequisites
 

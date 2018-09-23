@@ -26,3 +26,13 @@ cleos push action preventacc emplaceart '[ "sampeters","Bill Evans" ,"type3" , 1
 cleos push action preventacc emplaceart '[ "willthompson","Mary Trazy" ,"type4" , 120 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image4.jpg",1800,300]' -p bobross@active
 cleos push action preventacc emplaceart '[ "sarabrown","Helen Antonopouloy" ,"type5" , 230 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image6.jpg",3500 , 600]' -p bobross@active
 cleos push action preventacc emplaceart '[ "lisawalters","Dany Rose" ,"type6" , 3000 , "Thessaloniki-Greece" , "This is the description of a singer ....", "/image5.jpg" , 35000 , 5000]' -p bobross@active
+
+jq -c '.[]' mock_data.json | while read i; do
+  timestamp=$(jq -r '.timestamp' <<< "$i")
+  title=$(jq -r '.title' <<< "$i")
+  content=$(jq -r '.content' <<< "$i")
+  tag=$(jq -r '.tag' <<< "$i")
+
+# cleos push action priventacc test "["\""priventacc"\""]" -p priventacc@active 
+
+done

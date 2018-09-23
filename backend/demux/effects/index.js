@@ -1,5 +1,5 @@
-const blog = require('./blog')
+const privent = require('./privent')
 
 module.exports = [
-  ...blog
+  ...privent
 ]

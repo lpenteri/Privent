@@ -4,6 +4,7 @@ import { Route } from 'react-router';
 import EOSIOClient from './utils/eosio-client'
 import IOClient from './utils/io-client'
 import EventUi from './event/eventUi'
+import SearchVenue from './event/searchVenue'
 
 class App extends Component {
   state = {
@@ -28,6 +29,7 @@ class App extends Component {
     return (
       <div>
         <Route path='/eventui' component={EventUi}/>
+        <Route path='/searchvenue' component={SearchVenue}/>
       </div>
 
     )

@@ -1,0 +1,110 @@
+.container{
+  width: 100%;
+  padding-right: 8%;
+  padding-left: 8%;
+  padding-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h2.title{
+  font-family:"nexa_boldregular, Arial, sans-serif ";
+  font-weight: 400;
+  font-size: 17px;
+  margin:16px 0 0;
+  color:#50555b;
+}
+
+h1.title{
+  padding-top:30px;
+  font-family:"nexa_boldregular, Arial, sans-serif ";
+  font-weight: 400;
+  font-size: 25px;
+  margin:16px 0 0;
+  color:#50555b;
+}
+
+h2{
+  line-height: 35px;
+}
+
+.event-info{
+  margin:13px 0 0;
+}
+
+p.info-venue{
+  font-family: 'OpenSans' , Arial , sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color:#808285;
+  margin-bottom: 6px;
+}
+
+p{
+  margin:0 0 10px;
+}
+
+p.info-venue span.info-venue-icon {
+  background-image: url(https://d2poexpdc5y9vj.cloudfront.net/themes/3.0/img/nt-info-venue-icon.png);
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px -2px 0;
+}
+
+p.info-venue span.location-venue-icon {
+  background-image: url(https://d2poexpdc5y9vj.cloudfront.net/images/nt-info-location-icon.png);
+  display: inline-block;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 13px;
+  margin: 0 6px -2px 0;
+}
+
+p.info-venue span.info-users-icon {
+  background-image: url(https://d2poexpdc5y9vj.cloudfront.net/images/nt-lft-mini-user.png);
+  display: inline-block;
+  background-repeat: no-repeat;
+  width: 23px;
+  height: 20px;
+  margin: 0 6px -2px 0;
+}
+
+
+.event-info h2{
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 20px;
+  font-weight: 400;
+  color: #333;
+  margin: 30px 0 12px;
+  padding: 0 ;
+}
+
+.newLine{
+  display:block;
+}
+
+.digit{
+  display:inline-block;
+  zoom:1;
+  margin-right: 4px;
+}
+
+.digit-number{
+  font-size:25px;
+  padding:3px 15px;
+  font-family: Roboto,sans-serif;
+  font-weight: 300;
+}
+.wrapper{
+  width:30%;
+}
+
+
+.digit-label{
+  padding:5px;
+  font-size:20px;
+  text-align: left;
+
+}

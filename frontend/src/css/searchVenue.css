@@ -1,0 +1,13 @@
+.formstyle{
+  margin-bottom: 1.5rem;
+  margin-right: 0.1rem;
+  width: 100%;
+}
+
+.clearfix{
+  clear: both;
+}
+
+.submitButton{
+  width:25%;
+}
